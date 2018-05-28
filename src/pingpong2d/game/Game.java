@@ -151,9 +151,9 @@ public class Game implements Runnable{
                 pu = 0;
                 updates++;
             }
-            if(pt >= FPS_LIMIT*2) {
-                fps = updates/2;
-                System.out.println("FPS:"+fps);
+            if(pt >= FPS_LIMIT) {
+                fps = updates;
+                //System.out.println("FPS:"+fps);
                 updates = 0;
                 pt = 0;
             }

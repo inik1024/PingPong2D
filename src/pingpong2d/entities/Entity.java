@@ -90,6 +90,17 @@ public abstract class Entity {
         this.color = color;
     }
     
+    public Entity(Game game, double x, double y, double width, double height, Color color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.game = game;
+        this.xvel = 0;
+        this.yvel = 0;
+        this.color = color;
+    }
+    
     /**
      *
      */

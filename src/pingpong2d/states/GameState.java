@@ -7,6 +7,7 @@ package pingpong2d.states;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import pingpong2d.effects.Effect;
 import pingpong2d.entities.Ball;
 import pingpong2d.entities.Bat;
 import pingpong2d.entities.EntitySystem;
@@ -23,6 +24,8 @@ public class GameState extends State {
     
     private Ball ball, ball0;
     private Bat right, left;
+    private Effect easy;
+    
     private KeyboardManager keyboard;
             
     private int success = 0;
@@ -42,8 +45,8 @@ public class GameState extends State {
         //right = new Bat(game, 30.0, 100.0, 30.0, 100.0, 0.0, 400.0, Color.WHITE);
         //right.setRightSide(true);
         
-        System.out.println("press W or S to move the bat UP or DOWN");
-        System.err.println("If you may not be able to hit the ball, because it exits the window,\nyou are just unlucky ;)");
+        /*System.out.println("press W or S to move the bat UP or DOWN");
+        System.err.println("If you may not be able to hit the ball, because it exits the window,\nyou are just unlucky ;)");*/
         
         
         left = new Bat(game, 30.0, (game.getHEIGHT()-100.0)/2, 30.0, 100.0, 0.0, 400.0, Color.WHITE);
@@ -53,11 +56,13 @@ public class GameState extends State {
         ball0.setDirectionLineLength(15);
         ball0.setManualFreeMovement(false);*/
        
+        easy = new Effect(game, 200.0, 200.0, 200.0, 200.0, Color.BLUE, 3000.0);
         
         eS.add(ball);
         //eS.add(ball0);
         //eS.add(right);
         eS.add(left);
+        eS.add(easy);
 
         
         keyboard = game.getKeyboard();
